@@ -25,4 +25,19 @@
 
 print(roman_to_int())
 
-def roman_to_int(s):
+def int_to_roman():    
+ 
+    Num = int(input("Insira seu número: "))
+    Num2 = Num // 1000
+    Num3 = (Num % 1000) // 100
+    Num4 = (Num % 100) // 10
+    Num5 = Num % 10
+    Milhar = ["", "m", "mm", "mmm"]
+    Centena = ["", "c", "cc", "ccc", "cd", "d", "dc", "dcc", "dccc", "cm"]
+    Dezena = ["", "x", "xx", "xxx", "xl", "l", "lx", "lxx", "lxxx", "xc"]
+    Unidade = ["", "i", "ii", "iii", "iv", "v", "vi", "vii", "viii", "ix"]
+    romano_id = Milhar[Num2] + Centena[Num3] + Dezena[Num4] + Unidade[Num5]
+
+
+    return romano_id
+print(int_to_roman())
