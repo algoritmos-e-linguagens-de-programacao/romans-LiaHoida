@@ -11,15 +11,13 @@ def roman_to_int():
 
   roman = roman.upper()
   total = 0
-    for i in range(len(roman)):
-        try:
-           value = nums[roman[i]]
-         if i + 1 < len(roman) and nums[roman[i + 1]] > value:
-            total -= value
-         else:
-           total += value
-        except KeyError:
-           raise ValueError('Input is not a valid Roman numeral: %s' % roman)
+  for i in range(len(roman)):
+    try:
+      value = nums[roman[i]]
+    if i + 1 < len(roman) and nums[roman[i + 1]] > value:
+        total -= value
+    else:
+        total += value
 
     return total
 
