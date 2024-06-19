@@ -1,4 +1,4 @@
-   def roman_to_int():
+def roman_to_int():
     roman = "MCMXCIV"
 
     nums = {'M': 1000,
@@ -13,13 +13,13 @@
     total = 0
     for i in range(len(roman)):
         try:
-            value = nums[roman[i]]
-            if i + 1 < len(roman) and nums[roman[i + 1]] > value:
-                total -= value
-            else:
-                total += value
+           value = nums[roman[i]]
+         if i + 1 < len(roman) and nums[roman[i + 1]] > value:
+            total -= value
+         else:
+           total += value
         except KeyError:
-            raise ValueError('Input is not a valid Roman numeral: %s' % roman)
+           raise ValueError('Input is not a valid Roman numeral: %s' % roman)
 
     return total
 
