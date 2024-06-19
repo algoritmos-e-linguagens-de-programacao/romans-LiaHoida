@@ -15,9 +15,9 @@ def roman_to_int():
     try:
       value = nums[roman[i]]
     if i + 1 < len(roman) and nums[roman[i + 1]] > value:
-        total -= value
+      total -= value
     else:
-        total += value
+      total += value
 
     return total
 
