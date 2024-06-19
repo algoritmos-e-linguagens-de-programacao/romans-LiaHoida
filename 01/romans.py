@@ -1,43 +1,34 @@
-def roman_to_int():
-  roman = "MCMXCIV"
+def int_to_roman(num):
+    roman = ["I", "IV", "V", "IX", "X", "XL", "L", "XC", "C", "CD", "D", "CM", "M"]
+    val = [1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1000]
 
-  nums = {'M': 1000,
-            'D': 500,
-            'C': 100,
-            'L': 50,
-            'X': 10,
-            'V': 5,
-            'I': 1}
+    resultado = ''
 
-  roman = roman.upper()
-  total = 0
-  for i in range(len(roman)):
-    try:
-      value = nums[roman[i]]
-    if i + 1 < len(roman) and nums[roman[i + 1]] > value:
-      total -= value
-    else:
-      total += value
+    for i in range(len(val) - 1, -1, -1):
+        while num >= val[i]:
+            resultado += roman[i]
+            num -= val[i]
 
-    return total
+    return resultado
 
-print(roman_to_int())
+print(int_to_roman(1024))
+
 pass
 
-def int_to_roman():    
- 
-    Num = 1994
-    Num2 = Num // 1000
-    Num3 = (Num % 1000) // 100
-    Num4 = (Num % 100) // 10
-    Num5 = Num % 10
-    Milhar = ["", "m", "mm", "mmm"]
-    Centena = ["", "c", "cc", "ccc", "cd", "d", "dc", "dcc", "dccc", "cm"]
-    Dezena = ["", "x", "xx", "xxx", "xl", "l", "lx", "lxx", "lxxx", "xc"]
-    Unidade = ["", "i", "ii", "iii", "iv", "v", "vi", "vii", "viii", "ix"]
-    romano_id = Milhar[Num2] + Centena[Num3] + Dezena[Num4] + Unidade[Num5]
 
+def roman_to_int(s):
+    num = {"I": 1, "IV": 4, "V": 5, "IX": 9, "X": 10, "XL": 40, "L": 50, "XC": 90, "C": 100, "CD": 400, "D": 500, "CM": 900, "M": 1000}
 
-    return romano_id
-print(int_to_roman())
+    resultado = 0
+
+    for i in range(len(s)):
+        if i > 0 and num[s[i]] > num[s[i - 1]]:
+            resultado += num[s[i]] - 2 * num[s[i - 1]]
+        else:
+            resultado += num[s[i]]
+
+    return resultado
+
+print(roman_to_int("X"))
+
 pass
