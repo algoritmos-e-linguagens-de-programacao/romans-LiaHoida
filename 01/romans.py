@@ -11,7 +11,7 @@ def int_to_roman(num):
 
     return resultado
 
-print(int_to_roman(1024))
+print(int_to_roman(10))
 
 pass
 
@@ -29,6 +29,6 @@ def roman_to_int(s):
 
     return resultado
 
-print(roman_to_int("X"))
+print(roman_to_int("VI"))
 
 pass
